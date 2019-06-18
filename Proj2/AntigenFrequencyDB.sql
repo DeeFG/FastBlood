@@ -3,9 +3,9 @@ CREATE DATABASE fastBlood_BD;
 USE fastBlood_BD;
 
 CREATE TABLE antigenFrequency{
-    Antigen VARCHAR (3) NOT NUL,
-    Frequency Whites INT (2) NOT NULL,
-    Frequency Blacks INT (2) NOT NULL,
+    Antigen VARCHAR (3) NOT NULL,
+    Frequency Whites INT (3) NOT NULL,
+    Frequency Blacks INT (3) NOT NULL,
 };
 
 --  WORKING OFF THE ODD THAT THE ANTIGEN IS NOT PRESENT , USING ANTIGEN NEGATIVE FREQUENCY
@@ -34,18 +34,17 @@ VALUES(s,48,68);
 INSERT INTO antigenFrequency
 VALUES(K,91,98);
 INSERT INTO antigenFrequency
-VALUES(k,,);
+VALUES(k,.2,1);
 INSERT INTO antigenFrequency
-VALUES(,,);
+VALUES(kpa,97.7,100);
 INSERT INTO antigenFrequency
-VALUES(,,);
+VALUES(Jsa,100,80);
 INSERT INTO antigenFrequency
-VALUES(,,);
+VALUES(Fya,32,20);
 INSERT INTO antigenFrequency
-VALUES(,,);
+VALUES(Fyb,20,10);
 INSERT INTO antigenFrequency
-VALUES(,,);
+VALUES(Jka,24,8);
 INSERT INTO antigenFrequency
-VALUES(,,);
-INSERT INTO antigenFrequency
-VALUES(,,);
+VALUES(Jkb,26,52);
+
