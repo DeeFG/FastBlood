@@ -1,9 +1,17 @@
+var ProgressBar = require('progressbar.js');
+
+var bar = new ProgressBar.Line('#container', {easing: 'easeInOut'});
+bar.animate(1);  // Value from 0.0 to 1.0
+
 // user input screen
 // find pt search by ID
 // race
 // check if pt has TS
 //--------------------
 //check if pt has AB
+function checkAntibodies(){
+  if()
+}; 
 //==================15 - multiple dropdowns; changing one dropdown menu based on change in another in Javascript// if RC add calculate rc frequentcy * # units * #AB
 // choses plt add 5 mins ( )
 // chose cry add 25 mins
@@ -17,79 +25,42 @@
 // TOTAL MINS added to timer ( complete screening/thaw)
 // MINS to select & send added to timer
 // up date progress bar
+// progressbar.js@1.0.0 version is used
+// Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
+
+var bar = new ProgressBar.Circle(container, {
+  strokeWidth: 6,
+  easing: 'easeInOut',
+  duration: 1400,
+  color: '#FFEA82',
+  trailColor: '#eee',
+  trailWidth: 1,
+  svgStyle: null
+});
+
+
+bar.animate(0.6);  // Number from 0.0 to 1.0
 
 
 ///
 
+var mysql = require('mysql');
 
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "",
+  password: "",
+  database: ""
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-window.onload = function() {
-    // products is an object but you can think of it as a lookup table
-    var products = {
-          'RC': ['1', '2','3','4','4','6', '6'],
-          'Ontario': ['Bracebridge', 'Waterloo']
-        },
-        // just grab references to the two drop-downs
-        product_select = document.querySelector('#prov'),
-        quantity_select = document.querySelector('#town');
-  
-    // populate the provinces drop-down
-    setOptions(product_select, Object.keys(products));
-    // populate the town drop-down
-    setOptions(quantity_select, products[product_select.value]);
-    
-    // attach a change event listener to the provinces drop-down
-    product_select.addEventListener('change', function() {
-      // get the towns in the selected province
-      setOptions(quantity_select, products[product_select.value]);
-    });
-      
-    function setOptions(dropDown, options) {
-      // clear out any existing values
-      dropDown.innerHTML = '';
-      // insert the new options into the drop-down
-      options.forEach(function(value) {
-        dropDown.innerHTML += '<option name="' + value + '">' + value + '</option>';
-      });
-    }  
-  };
- <select id="prov"></select>
-<select id="town"></select>
-
-//--------------------------------------
-
-  $(document).ready(function() {
-
-    $("#source").change(function() {
-  
-      var el = $(this) ;
-  
-      if(el.val() === "ONLINE" ) {
-      $("#status").append("<option>SHIPPED</option>");
-      }
-        else if(el.val() === "MANUAL" ) {
-          $("#status option:last-child").remove() ; }
-    });
-  
+con.connect(function(err) {
+  if (err) throw err;
+  //Select all patients and return the result object:
+  con.query("SELECT * FROM patientData", function (err, result, fields) {
+    if (err) throw err;
+    console.log(result);
   });
-
-
- 
-
-
-
+});
 
 
 
