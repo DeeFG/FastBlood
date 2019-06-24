@@ -1,102 +1,109 @@
-https://transfusion.com.au/node/727
+<!DOCTYPE html>
+<html lang="en">
 
-file:///C:/Users/dflowers/Downloads/Serology_Website.pdf
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="app.js">
+  <title>FastBlood</title>
+</head>
 
-<div class="container calculator-body compatibility-calculator" style="margin-top: 20px;">
-    <div class="space-between top-row">
-      <h3>Choose the desired antibody specificities using the drop down boxes below.</h3>
-      <button type="button" id="reset-button" class="btn btn-warning">Reset</button>
-    </div>
-    <form class="form-inline row">
-      <div class="form-group col-sm-6">
-        <label>RhD Type</label>
-        <select id="rhd-type" class="form-control">
-          <option value="random">Random</option>
-          <option value="positive">RhD Positive</option>
-          <option value="negative">RhD Negative</option>
-        </select>
-      </div>
-      <div class="form-group col-sm-6">
-        <label>No. of Units</label>
-        <input id="number-of-units" class="form-control" type="number" name="number-of-units" min="1" value="1"/>
-      </div>
-    </form>
-    <div class="row">
-      <table class="table">
-        <thead>
-          <th>BGS</th>
-          <th>Antibody</th>
-          <th>Antigen Negative</th>
-          <th>Frequency</th>
-        </thead>
-        <tbody id="compatibility-main-content"></tbody>
-      </table>
-    </div>
-    <div class="flex-start">
-      <button type="button" id="other-phenotypes-button" class="btn">Other Antibodies</button>
-      <button type="button" id="reset-button" class="btn btn-warning">Reset</button>
-    </div>
-    <div class="row" id="other-phenotypes-container">
-      <h3 class="ml15">Please select other blood group system antibodies.</h3>
-      <table class='table'>
-        <thead>
-          <th>BGS</th>
-          <th>Antibody</th>
-          <th>Antigen Negative</th>
-          <th>Frequency</th>
-        </thead>
-        <tbody id="compatibility-appendix-content"></tbody>
-      </table>
-    </div>
-    <div>
-      <button type="button" id="calculate-button" class="btn" disabled="disabled" data-toggle="modal" data-target="#report-modal">Calculate</button>
-      <button type="button" id="reset-button" class="btn btn-warning">Reset</button>
-    </div>
-  </div>
+<body>
+  <!-- progree bar  -->
+    <div id="container"> </div>
 
-  <!-- Modal -->
-  <div id="report-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-lg">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" style="margin: 10px;">&times;</button>
-        <div id="printable">
-          <div class="modal-header">
-            <h2 class="result-display-title uppercase title-1"></h2>
-          </div>
-          <div class="modal-body result-display" id="print-content">
-            <p class="result-display-body body-1"></p>
-            <hr>
-            <h3 id="testHeader">How many donations will I have to test?</h3>
-            <p class="result-display-body body-2"></p>
-            <hr>
-            <h3>Antibody selection:</h3>
-            <table class="table">
-              <thead>
-                <th>Antibody</th>
-                <th>Antigen Negative</th>
-                <th>Frequency</th>
-                <th>Haemolytic Transfusion Reaction (HTR)</th>
-                <th>Haemolytic Disease of Fetus and Newborn (HDFN)</th>
-                <th>Select Red Cells</th>
-              </thead>
-              <tbody id="result-display-table"></tbody>
-            </table>
-          </div>
-          <img src="https://transfusion.com.au/sites/default/files/logo-arcbs-header_0.png" class="modal-print" />
+  <!-- Find patient -->
+  <form>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="medium-6 cell">
+          <label>First
+            <input type="text" placeholder="First Name">
+          </label>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-default" id="print-button" onclick="printContent();">Print</button>
+        <div class="medium-6 cell">
+          <label>Last
+            <input type="text" placeholder="Last Name">
+          </label>
+        </div>
+        <div class="medium-6 cell">
+          <label>HRN
+            <input type="number" placeholder="Hospital Record Number">
+          </label>
+        </div>
+        <div class="medium-6 cell">
+          <label>D.O.B
+            <input type="date" placeholder="Date of Birth">
+          </label>
         </div>
       </div>
     </div>
-  </div>
+  </form>
 
-          <div class='custom submitted'>Updated on 9 May, 2017</div>
-        </section>
+  <!-- Select testing -->
+  <div class="grid-x grid-padding-x">
+      <fieldset class="large-7 cell">
+        <legend>Test</legend>
+        <input id="checkbox1" type="checkbox"><label for="checkbox1">Type adn Screen</label>
+        <input id="checkbox2" type="checkbox"><label for="checkbox2">Confirmed Type</label>
+      </fieldset>
+    </div>
 
-      </div>
-      <footer class="footer container">
-        <div class="footer-message">© 2019 Australian Red Cross Blood Service</div>
+
+  <!-- CHOOSE PRODUCT and number choice -->
+  <label>Select Menu
+    <select>
+      <option value="Red Cells">Red Cells</option>
+      <option value="Plasma">Plasma</option>
+      <option value="Platlets">Platlets</option>
+      <option value="Cryo">Cryo</option>
+    </select>
+  </label>
+
+  <label>
+    How many units?
+    <input type="number" value="">
+  </label>
+  <!-- select Ab  -->
+  <div class="grid-x grid-padding-x">
+
+      <fieldset class="large-7 cell">
+        <legend>Antibody selection</legend>
+        <input id="C" type="checkbox"><label for="C">C</label>
+        <input id="" type="checkbox"><label for=""></label>
+        <input id="" type="checkbox"><label for=""></label>
+        <input id="" type="checkbox"><label for=""></label>
+        <input id="" type="checkbox"><label for=""></label>
+        <input id="" type="checkbox"><label for=""></label>
+        <input id="" type="checkbox"><label for=""></label>
+        <input id="" type="checkbox"><label for=""></label>
+        <input id="" type="checkbox"><label for=""></label>
+        <input id="" type="checkbox"><label for=""></label>
+        <input id="" type="checkbox"><label for=""></label>
+        <input id="" type="checkbox"><label for=""></label>
+        <input id="" type="checkbox"><label for=""></label>
+        <input id="" type="checkbox"><label for=""></label>
+        <input id="" type="checkbox"><label for=""></label>
+        <input id="" type="checkbox"><label for=""></label>
+        <input id="" type="checkbox"><label for=""></label>
+      </fieldset>
+    </div>
+
+
+  <!--  -->
+
+
+  <!--  -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</body>
+
+</html>
+
+
+<!-- references -->
+<!-- https://transfusion.com.au/node/727
+
+file:///C:/Users/dflowers/Downloads/Serology_Website.pdf -->
