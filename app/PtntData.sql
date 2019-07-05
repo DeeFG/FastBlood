@@ -7,39 +7,41 @@ CREATE TABLE patientRecords
     FirstName  VARCHAR (26) NOT NULl,
     LastName VARCHAR (26) NOT NULl,
     DATE  VARCHAR (6) NOT NULl,
+    Antibodies VARCHAR (4) NOT NULL,
    PRIMARY KEY (HRN)
    
 );
 
-INSERT INTO patientRecords
-VALUES (kristen, Bell, 1980/05/20);
+INSERT INTO patientRecords(FirstName,LastName,birth,Antibodies)
+VALUES ("kristen", "Bell", 19800520, "K");
 
-INSERT INTO patientRecords
-VALUES (Zoe,Kravitz, 1988/12/01);
+INSERT INTO patientRecords(FirstName,LastName,birth,Antibodies)
+VALUES ("Zoe","Kravitz", 19881201,"c, E");
 
-INSERT INTO patientRecords
-VALUES (Lisa,Lopes, 1988/12/01);
+INSERT INTO patientRecords(FirstName,LastName,birth,Antibodies)
+VALUES ("Lisa","Lopes", 1988614,"S, Jka");
 
-INSERT INTO patientRecords
-VALUES (Ginger,Nim, 1940/07/11);
+INSERT INTO patientRecords(FirstName,LastName,birth,Antibodies)
+VALUES ("Ginger","Nim", 19400711);
 
-INSERT INTO patientRecords
-VALUES (Steve,Jobs, 1955/02/24);
+INSERT INTO patientRecords(FirstName,LastName,birth,Antibodies)
+VALUES ("Steve","Jobs", 19550224);
 
 
 CREATE TABLE antigenFrequency(
     Antigen VARCHAR (3) NOT NULL,
-    Frequency Whites INT (3) NOT NULL,
-    Frequency Blacks INT (3) NOT NULL,
+    FrequencyWhites INT (3) NOT NULL,
+    FrequencyBlacks INT (3) NOT NULL,
 );
 
 --  WORKING OFF THE ODD THAT THE ANTIGEN IS NOT PRESENT , USING ANTIGEN NEGATIVE FREQUENCY
 
 
+INSERT INTO antigenFrequency (Antigen,FrequencyWhites,FrequencyBlacks)
+VALUES ("D",85,92);
+
 INSERT INTO antigenFrequency 
-VALUES (D,85,92);
-INSERT INTO antigenFrequency 
-VALUES (C,68,27);
+VALUES ("C",68,27);
 INSERT INTO antigenFrequency
 VALUES(E,29,22);
 INSERT INTO antigenFrequency
