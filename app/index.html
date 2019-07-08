@@ -5,55 +5,90 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="app.js">
+  <link rel="stylesheet" href="public/css/style.css">
+  <link rel="stylesheet" href="controller/api-routes.js">
+  <link rel="stylesheet" href="public/js/view.js">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  
+  <!-- Compressed CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css" integrity="sha256-xpOKVlYXzQ3P03j397+jWFZLMBXLES3IiryeClgU5og= sha384-gP4DhqyoT9b1vaikoHi9XQ8If7UNLO73JFOOlQV1RATrA7D0O7TjJZifac6NwPps sha512-AKwIib1E+xDeXe0tCgbc9uSvPwVYl6Awj7xl0FoaPFostZHOuDQ1abnDNCYtxL/HWEnVOMrFyf91TDgLPi9pNg==" crossorigin="anonymous">
+
+<!-- Compressed JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js" integrity="sha256-/PFxCnsMh+nTuM0k3VJCRch1gwnCfKjaP8rJNq5SoBg= sha384-9ksAFjQjZnpqt6VtpjMjlp2S0qrGbcwF/rvrLUg2vciMhwc1UJJeAAOLuJ96w+Nj sha512-UMSn6RHqqJeJcIfV1eS2tPKCjzaHkU/KqgAnQ7Nzn0mLicFxaVhm9vq7zG5+0LALt15j1ljlg8Fp9PT1VGNmDw==" crossorigin="anonymous"></script>
   <title>FastBlood</title>
 </head>
 
 <body>
-  <!-- progree bar  -->
-    <div id="container"> </div>
+
+  <!-- header -->
+
 
   <!-- Find patient -->
-  <form   > 
-    <div class="grid-container">
-      <div class="grid-x grid-padding-x">
-        <div class="medium-6 cell">
-          <label>First
-            <input type="text" placeholder="First Name">
-          </label>
-        </div>
-        <div class="medium-6 cell">
-          <label>Last
-            <input type="text" placeholder="Last Name">
-          </label>
-        </div>
-        <div class="medium-6 cell">
-          <label>HRN
-            <input type="number" placeholder="Hospital Record Number">
-          </label>
-        </div>
-        <div class="medium-6 cell">
-          <label>D.O.B
-            <input type="date" placeholder="Date of Birth">
-          </label> 
-        </div>
+  <div class="grid-container">
+      <div class="grid-x grid-margin-x">
+        <div class="cell small-4"><img src="" alt=""></div>
+        <div class="cell small-4">Navigation </div>
+        <div class="cell small-4"></div>
+      </div>
+    
+  <div class="grid-x grid-padding-x">
+        <header class="hero-search-filter">
+    <div class="hero-search-filter-content">
+      <!-- <img class="hero-search-filter-logo" src="https://damienshadowsage.files.wordpress.com/2015/10/donate-trans.jpg" alt="" /> -->
+      <form class="hero-search-filter-form" action="">
+        <label for="findtext">First</label>
+        <input id="findtext" class="hero-search-filter-form-find" type="text"/>
+        <div class="divider">&nbsp;</div>
+        <label for="findlocate">Last</label>
+        <input id="findlocate" class="hero-search-filter-form-near" type="text"/>
+        <div class="divider">&nbsp;</div>
+        <label for="findlocate">HRN</label>
+        <input id="findlocate" class="hero-search-filter-form-near" type="number"/>
+        <div class="divider">&nbsp;</div>
+        <label for="findlocate">birth</label>
+        <input id="findlocate" class="hero-search-filter-form-near" type="date"/>
+        <br>
+        <input type="submit" id="submit" class="button" value="submit">
+      </form>
+      
+    </div>
+  </header>
+
+
+  
+
+  
+  <div class="container">
+    <h2>Progress Bar</h2>
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" role="progressbar" style="width:30%">
+        Type and Screen complete
+      </div>
+      <div class="progress-bar progress-bar-warning" role="progressbar" style="width:30%">
+        Type confirm complete
+      </div>
+      <div class="progress-bar progress-bar-danger" role="progressbar" style="width:20%">
+        Testing units
       </div>
     </div>
-  </form>
+  </div>
+
+
+<br>
+<br>
+
 
   <!-- Select testing -->
   <div class="grid-x grid-padding-x">
       <fieldset class="large-7 cell">
         <legend>Test</legend>
-        <input id="checkbox1" type="checkbox"><label for="checkbox1">Type adn Screen</label>
+        <input id="checkbox1" type="checkbox"><label for="checkbox1">Type & Screen</label>
         <input id="checkbox2" type="checkbox"><label for="checkbox2">Confirmed Type</label>
       </fieldset>
-    </div>
-
 
   <!-- CHOOSE PRODUCT and number choice -->
-  <label>Select Menu
+  <legend>Product selection</legend>
+  <label> Choose Products
     <select>
       <option value="Red Cells">Red Cells</option>
       <option value="Plasma">Plasma</option>
@@ -63,40 +98,40 @@
   </label>
 
   <label>
-    How many units?
+    How Many Units?
     <input type="number" value="">
   </label>
   <!-- select Ab  -->
-  <div class="grid-x grid-padding-x">
+
 
       <fieldset class="large-7 cell">
         <legend>Antibody selection</legend>
-        <input id="C" type="checkbox"><label for="C">C</label>
-        <input id="" type="checkbox"><label for=""></label>
-        <input id="" type="checkbox"><label for=""></label>
-        <input id="" type="checkbox"><label for=""></label>
-        <input id="" type="checkbox"><label for=""></label>
-        <input id="" type="checkbox"><label for=""></label>
-        <input id="" type="checkbox"><label for=""></label>
-        <input id="" type="checkbox"><label for=""></label>
-        <input id="" type="checkbox"><label for=""></label>
-        <input id="" type="checkbox"><label for=""></label>
-        <input id="" type="checkbox"><label for=""></label>
-        <input id="" type="checkbox"><label for=""></label>
-        <input id="" type="checkbox"><label for=""></label>
-        <input id="" type="checkbox"><label for=""></label>
-        <input id="" type="checkbox"><label for=""></label>
-        <input id="" type="checkbox"><label for=""></label>
-        <input id="" type="checkbox"><label for=""></label>
+        <input id="" type="checkbox"><label for="C">C</label>
+        <input id="" type="checkbox"><label for="c">c</label>
+        <input id="" type="checkbox"><label for="E"></label>
+        <input id="" type="checkbox"><label for="e">E</label>
+        <input id="" type="checkbox"><label for="D">D</label>
+        <input id="" type="checkbox"><label for=FM">M</label>
+        <input id="" type="checkbox"><label for="N">N</label>
+        <input id="" type="checkbox"><label for="S">S</label>
+        <input id="" type="checkbox"><label for="s">s</label>
+        <input id="" type="checkbox"><label for="K">K</label>
+        <input id="" type="checkbox"><label for="k">k</label>
+        <input id="" type="checkbox"><label for="Kpa">Kpa</label>
+        <input id="" type="checkbox"><label for="Jsa">Jsa</label>
+        <input id="" type="checkbox"><label for="Fya">Fya</label>
+        <input id="" type="checkbox"><label for="Fyb">Fyb</label>
+        <input id="" type="checkbox"><label for="Jka">Jka</label>
+        <input id="" type="checkbox"><label for="Jkb">Jkb</label>
       </fieldset>
     </div>
-
-
-  <!--  -->
-
+  
 
   <!--  -->
 
+<footer> footer </footer>
+  <!--  -->
+</div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>
 
