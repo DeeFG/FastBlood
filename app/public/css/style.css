@@ -131,29 +131,29 @@
     height: 100px;
   }
 
-  .tasks{
+  .test{
     background-color: rgb(153, 212, 212);
     padding: 10px;
     border-radius: 5px;
     margin-top: 10px;
   }
-  .tasks span{
+  .test span{
     font-weight: bold;
   }
-  .tasks input{
+  .test input{
     display: block;
     margin: 0 auto;
     margin-top: 10px;
   }
-  .tasks a{
+  .test a{
     color: #000;
     text-decoration: none;
     border:none;
   }
-  .tasks a:hover{
+  .test a:hover{
     border-bottom: dashed 1px #0088cc;
   }
-  .tasks label{
+  .test label{
     display: block;
     text-align: center;
   }
