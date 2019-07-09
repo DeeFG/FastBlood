@@ -15,7 +15,7 @@ var db = require("../models");
 
 module.exports = function (app) {
   app.get("/api/patientData/:id", function (req, res) {
-    db.patientData.findOne({
+    db.PTData.findOne({
       where: {
         id: req.params.id
       }
