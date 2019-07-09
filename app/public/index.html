@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./css/style.css">
-
+  <link rel="stylesheet" href="jquery.progressbar.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -21,10 +21,11 @@
 <body>
 
   <!-- header -->
-
+  <div id="steps"></div>
+  <div id="pbar></div>
 
   <!-- Find patient -->
-  <div class="grid-container">
+  <div class=" grid-container">
     <div class="grid-x grid-margin-x">
       <div class="cell small-4"><img src="" alt=""></div>
       <div class="cell small-4">Navigation </div>
@@ -57,75 +58,130 @@
 
 
 
-
-
       <div class="container">
+
         <h2>Progress Bar</h2>
         <div class="progress progress-striped active">
           <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+
           </div>
         </div>
 
-        <div class="row test">
-          <div class="col-md-12">
-            <p><span>Testing</span></p>
-          </div>
-          <div class="col-md-2">
-            <label>T&S</label>
-          </div>
-          <div class="col-md-1">
-            <input name="progress" class="progress" type="checkbox" value="20">
-          </div>
-          <div class="col-md-1">
-            <label>Confirmed Type</label>
-          </div>
-          <div class="col-md-1">
-            <input name="progress" class="progress" type="checkbox" value="10">
-          </div>
-          <div class="col-md-1">
-            <label>Special Testing</label>
-          </div>
-          <div class="col-md-1">
-            <input name="done" class="done" type="checkbox" value="60">
-          </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="progress-circle p10 center-block">
+                    <span>10%</span>
+                    <div class="left-half-clipper">
+                        <div class="first50-bar"></div>
+                        <div class="value-bar"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="progress-circle p20 center-block">
+                    <span>20%</span>
+                    <div class="left-half-clipper">
+                        <div class="first50-bar"></div>
+                        <div class="value-bar"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="progress-circle p30 center-block">
+                    <span>30%</span>
+                    <div class="left-half-clipper">
+                        <div class="first50-bar"></div>
+                        <div class="value-bar"></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
+          <!-- <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10"
+              aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%"
+              aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%"
+              aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%"
+              aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%"
+              aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          </div> -->
 
-      </div>
 
 
-      <br>
-      <br>
-      <div class="row test">
-        <div class="col-md-12">
-          <legend>Product selection</legend>
+
           <div class="row test">
-            <div class="col-md-4">
-              <label> Choose Products<div class="col-md-4">
-                  <select>
-                    <option value="Red Cells">Red Cells</option>
-                    <option value="Plasma">Plasma</option>
-                    <option value="Platlets">Platlets</option>
-                    <option value="Cryo">Cryo</option>
-                  </select></label>
-
+            <div class="col-md-12">
+              <p><span>Testing</span></p>
+            </div>
+            <div class="col-md-2">
+              <label>T&S</label>
+            </div>
+            <div class="col-md-1">
+              <input name="progress" class="progress" type="checkbox" value="20">
+            </div>
+            <div class="col-md-1">
+              <label>Confirmed Type</label>
+            </div>
+            <div class="col-md-1">
+              <input name="progress" class="progress" type="checkbox" value="10">
+            </div>
+            <div class="col-md-1">
+              <label>Special Testing</label>
+            </div>
+            <div class="col-md-1">
+              <input name="done" class="done" type="checkbox" value="60">
             </div>
           </div>
-          <div class="col-md-4">
-            <label> Number of Units <input type="number" value="" max="10"></label>
+
+
+
+        </div>
+
+
+        <br>
+        <br>
+        <div class="row test">
+          <div class="col-md-12">
+            <legend>Product selection</legend>
+            <div class="row test">
+              <div class="col-md-4">
+                <label> Choose Products<div class="col-md-4">
+                    <select>
+                      <option value="Red Cells">Red Cells</option>
+                      <option value="Plasma">Plasma</option>
+                      <option value="Platlets">Platlets</option>
+                      <option value="Cryo">Cryo</option>
+                    </select></label>
+
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label> Number of Units <input type="number" value="" max="10"></label>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
 
 
-  <!-- CHOOSE PRODUCT and number choice -->
+    <!-- CHOOSE PRODUCT and number choice -->
 
 
-  <!-- select Ab  -->
+    <!-- select Ab  -->
   </div>
 
   <fieldset class="large-7 cell">
@@ -159,6 +215,8 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="./js/add.js"></script>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="jquery.progressbar.js"></script>
   <script>
 
 
@@ -180,6 +238,19 @@
       });
 
     });
+
+
+    var bar = new ProgressBar.Circle(pbar, {
+      strokeWidth: 6,
+      easing: 'easeInOut',
+      duration: 1400,
+      color: '#FFEA82',
+      trailColor: '#eee',
+      trailWidth: 1,
+      svgStyle: null
+    });
+
+    bar.animate(1.0);  // Number from 0.0 to 1.0
 
   </script>
 </body>

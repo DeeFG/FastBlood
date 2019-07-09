@@ -16,15 +16,15 @@
 
 
 
-
+// add time to timer 
 $(document).ready(function () {
 
     $('input[type="checkbox"]').click(function updateProgressBar() {
         if ($(this).prop("checked") == true) {
-            alert("Checkbox is checked.");
+            console.log("Checkbox is checked.");
         }
         else if ($(this).prop("checked") == false) {
-            alert("Checkbox is unchecked.");
+            console.log("Checkbox is unchecked.");
         }
     });
 });
