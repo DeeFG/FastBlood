@@ -40,38 +40,38 @@ CREATE TABLE antigenFrequency(
 INSERT INTO antigenFrequency (Antigen,FrequencyWhites,FrequencyBlacks)
 VALUES ("D",85,92);
 
-INSERT INTO antigenFrequency 
+INSERT INTO antigenFrequency (Antigen,FrequencyWhites,FrequencyBlacks)
 VALUES ("C",68,27);
-INSERT INTO antigenFrequency
+INSERT INTO antigenFrequency(Antigen,FrequencyWhites,FrequencyBlacks)
 VALUES(E,29,22);
-INSERT INTO antigenFrequency
+INSERT INTO antigenFrequency(Antigen,FrequencyWhites,FrequencyBlacks)
 VALUES(c,80,96);
-INSERT INTO antigenFrequency
+INSERT INTO antigenFrequency(Antigen,FrequencyWhites,FrequencyBlacks)
 VALUES(e,98,98);
 
 -- ^^^^^^^flip values to negative FOR CALCULATION
-INSERT INTO antigenFrequency
+INSERT INTO antigenFrequency(Antigen,FrequencyWhites,FrequencyBlacks)
 VALUES(M,21,26);
-INSERT INTO antigenFrequency
+INSERT INTO antigenFrequency(Antigen,FrequencyWhites,FrequencyBlacks)
 VALUES(N,30,25);
-INSERT INTO antigenFrequency
+INSERT INTO antigenFrequency(Antigen,FrequencyWhites,FrequencyBlacks)
 VALUES(S,48,68);
-INSERT INTO antigenFrequency
+INSERT INTO antigenFrequency(Antigen,FrequencyWhites,FrequencyBlacks)
 VALUES(s,48,68);
-INSERT INTO antigenFrequency
+INSERT INTO antigenFrequency(Antigen,FrequencyWhites,FrequencyBlacks)
 VALUES(K,91,98);
-INSERT INTO antigenFrequency
+INSERT INTO antigenFrequency(Antigen,FrequencyWhites,FrequencyBlacks)
 VALUES(k,.2,1);
-INSERT INTO antigenFrequency
+INSERT INTO antigenFrequency(Antigen,FrequencyWhites,FrequencyBlacks)
 VALUES(kpa,97.7,100);
-INSERT INTO antigenFrequency
+INSERT INTO antigenFrequency(Antigen,FrequencyWhites,FrequencyBlacks)
 VALUES(Jsa,100,80);
-INSERT INTO antigenFrequency
+INSERT INTO antigenFrequency(Antigen,FrequencyWhites,FrequencyBlacks)
 VALUES(Fya,32,20);
-INSERT INTO antigenFrequency
+INSERT INTO antigenFrequency(Antigen,FrequencyWhites,FrequencyBlacks)
 VALUES(Fyb,20,10);
-INSERT INTO antigenFrequency
+INSERT INTO antigenFrequency(Antigen,FrequencyWhites,FrequencyBlacks)
 VALUES(Jka,24,8);
-INSERT INTO antigenFrequency
+INSERT INTO antigenFrequency(Antigen,FrequencyWhites,FrequencyBlacks)
 VALUES(Jkb,26,52);
 
