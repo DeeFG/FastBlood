@@ -1,128 +1,130 @@
 <div class="container">
 
-    <!-- header -->
-    <div class="row">
-      <div class="col-md-12">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Directory</a>
-              </li>
-            </ul> 
-          </div>
-        </nav>
-      </div>
-    </div>
-    <br><br>
-    <div class="row ">
-      <div class="col-md-12">
-        <h2>Enter a New Patient</h2>
-
-       <br><br>
-      <div class="row">
-          <div class="col-md-12" id="staticData">
-
-          </div>
+  <!-- header -->
+  <div class="row">
+    <div class="col-md-12">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">ADD A PATIENT<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">FIND MY PATIENT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">CONTACT THE BLOOD BANK</a>
+            </li>
+          </ul>
         </div>
-        <div class="row">
-          <div class="inputBox col-md-12">
-            <!-- Find patient -->
-            <form>
-              <div class="form-row">
-                <div class="form-group col-md-3">
-                  <label for="">First</label>
-                  <input id="first-input" type="text" class="form-control" placeholder="First">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="">Last</label>
-                  <input id="last-input" type="text" class="form-control" placeholder="Last">
-                </div>
-                <!-- <div class="form-group col-md-3">
-                  <label for="">HRN</label>
-                  <input id="hrn-input" type="text" class="form-control" placeholder="Hospital Record Number">
-                </div> -->
-                <div class="form-group col-md-3">
-                  <label for="">Birth Date</label>
-                  <input id="birth-input" type="date" class="form-control" placeholder="Apartment, studio, or floor">
-                </div>
+      </nav>
+    </div>
+  </div>
+  <br><br>
+  <div class="row ">
+    <div class="col-md-12">
+      <div class="welcome"><h2>Enter a New Patient</h2> </div>
+
+      <br><br>
+      <div class="row">
+        <div class="col-md-12" id="staticData">
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="inputBox col-md-12">
+          <!-- Find patient -->
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <label for="">First</label>
+                <input id="first-input" type="text" class="form-control" placeholder="First">
               </div>
-              {{!-- <div class="form-group col-md-12">
-                <button id="submit" type="submit" class="btn btn-primary">Add Patient</button>
-              </div> --}}
-            </form>
-          </div>
+              <div class="form-group col-md-3">
+                <label for="">Last</label>
+                <input id="last-input" type="text" class="form-control" placeholder="Last">
+              </div>
+              <div class="form-group col-md-3">
+                <label for="">Birth Date</label>
+                <input id="birth-input" type="date" class="form-control" placeholder="Apartment, studio, or floor">
+              </div>
+            </div>
+          </form>
+          <button class="goTesting">NEXT</button>
+        </div>
 
         <!-- CHOOSE PRODUCT and number choice -->
-          <div class="row">
-            <div class="col-md-12">
-              <div class="row test">
-                <div class="col-md-12">
-                  <p><span>Testing</span></p>
-                </div>
-                <div class="col-md-2">
-                  <label>T&S</label>
-                </div>
-                <div class="col-md-1">
-                  <input id="TS" name="progress"  class="progress" type="checkbox" value="20">
-                </div>
-                <div class="col-md-1">
-                  <label>Confirmed Type</label>
-                </div>
-                <div class="col-md-1">
-                  <input id="secondType" name="progress" class="progress2" type="checkbox" value="30">
-                </div>
-                <div class="col-md-1">
-                  <label>Special Testing</label>
-                </div>
-                <div class="col-md-1">
-                  <input id="spTest"name="done" class="progress2" type="checkbox" value="50">
-                </div>
-              </div>
-            </div>
-            <br>
-            <br>
+        <div class="row Testing">
+          <div class="col-md-12">
             <div class="row test">
               <div class="col-md-12">
-                <legend>Product selection</legend>
-                <div class="row test">
-                  <div class="col-md-6">
-                    <label> Choose Products<div class="col-md-4">
-                        <select id="product">
-                          <option value="" disabled selected>Choose Products</option>
-                          <option value="Red Cells">Red Cells</option>
-                          <option value="Plasma">Plasma</option>
-                          <option value="Platlets">Platlets</option>
-                          <option value="Cryo">Cryo</option>
-                        </select></label>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <label> Number of Units <input type="number" id="productQuantity" value="0" min="1" max="10"></label>
-                </div>
+                <p><span>Testing</span></p>
+              </div>
+              <div class="col-md-2">
+                <label>T&S</label>
+              </div>
+              <div class="col-md-1">
+                <input id="TS" name="progress" class="progress" type="checkbox" value="20">
+              </div>
+              <div class="col-md-1">
+                <label>Confirmed Type</label>
+              </div>
+              <div class="col-md-1">
+                <input id="secondType" name="progress" class="progress2" type="checkbox" value="30">
+              </div>
+              <div class="col-md-1">
+                <label>Special Testing</label>
+              </div>
+              <div class="col-md-1">
+                <input id="spTest" name="done" class="progress2" type="checkbox" value="50">
               </div>
             </div>
           </div>
+          <button class="goProducts">NEXT</button>
         </div>
 
-        <!-- select Ab  -->
+
+        <br>
+        <br>
+        <div class="row test Products">
+          <div class="col-md-12">
+            <legend>Product selection</legend>
+            <div class="row test">
+              <div class="col-md-6">
+                <label> Choose Products<div class="col-md-4">
+                    <select id="product">
+                      <option value="" disabled selected>Choose Products</option>
+                      <option value="Red Cells">Red Cells</option>
+                      <option value="Plasma">Plasma</option>
+                      <option value="Platlets">Platlets</option>
+                      <option value="Cryo">Cryo</option>
+                    </select></label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label> Number of Units <input type="number" id="productQuantity" value="0" min="1" max="10"></label>
+            </div>
+          </div>
+          <button class="goAntibodies">NEXT</button>
+        </div>
+
       </div>
-<div class="row antibodoies">
-  <div class="col-md-12">
-      
-        <legend>Antibody selection</legend>
-        <p>Hold CTRL / CMD for selecting multiple fields</p>
+    </div>
+
+    <!-- select Ab  -->
+  </div>
+  <div class="row Antibodies">
+    <div class="col-md-12">
+
+      <legend>Antibody selection</legend>
+      <p>Hold CTRL / CMD for selecting multiple fields</p>
       <select class="col-md-2 antibodies" id="chosenOnes" multiple="multiple">
         <option value="" disabled selected>Choose Antibodies</option>
         <option value="C" for="C">C</option>
@@ -143,20 +145,20 @@
         <option value="Jka" for="Jka">Jka</option>
         <option value="JKb" for="Jkb">Jkb</option>
       </select>
-      <button id="submitAntibodies" type="button" class="btn btn-primary">Add Antibodies</button>
+      <button id="submitAntibodies" type="button" class="btn btn-primary">Add Patient</button>
+
+    </div>
 
   </div>
 
 </div>
+</div>
+<!--  -->
+</div>
+</div>
+<br><br>
+<!--  -->
 
-    </div>
-  </div>
-  <!--  -->
-  </div>
-  </div>
-  <br><br>
-  <!--  -->
-
-  <footer> footer </footer>
-  <!--  -->
-  </div>
+<footer> footer </footer>
+<!--  -->
+</div>

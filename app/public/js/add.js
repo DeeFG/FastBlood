@@ -7,6 +7,36 @@
 // update again ...progess stay the same
 
 $("#staticData").hide();
+$(".Testing").hide();
+$(".Products").hide();
+$(".Antibodies").hide();
+
+
+$(".goTesting").click(function() {
+  $(".Testing").show();
+
+  $(".inputBox").hide();
+  $(".Products").hide();
+  $(".Antibodies").hide();
+});
+
+$(".goProducts").on("click", function() {
+  $(".Products").show();
+
+  $(".inputBox").hide();
+  $(".Testing").hide();
+  $(".Antibodies").hide();
+});
+
+$(".goAntibodies").on("click", function() {
+  $(".Antibodies").show();
+  $(".inputBox").hide();
+  $(".Testing").hide();
+  $(".Products").hide();
+});
+
+
+
 
 
 $("#submitAntibodies").click(function() {
@@ -56,19 +86,28 @@ $("#submitAntibodies").click(function() {
 
   }).then(function(result) {
     console.log(result);
-    
+    $(".welcome").hide();
+    $(".Antibodies").hide();
+    $(".inputBox").hide();
+    $(".Testing").hide();
+    $(".Products").hide();
+
     clearInputForm();
     //   appends static data for new oatient to page
 
     $("#staticData").append(
+      "<h2>You have created a patietn with a  Hospital ID: </h2>"  + "<h1>" +result.id + "</h1>" +
       "First Name: " +
         result.FirstName +
         "<br>Last Name: " +
         result.LastName +
         "<br> DOB: " +
-        result.birth
+        result.birth +
+        "<br> Antibodies Present: " + result.Antibodies
     );
     $("#staticData").show();
+   
+
   });
 }
 
@@ -159,36 +198,4 @@ function clearInputForm() {
 }
 
 
-//  extracts data from input fields
-// $("#submit").on("click", function(event) {
-//   event.preventDefault();
 
-//   first = $("#first-input")
-//     .val()
-//     .trim();
-//   last = $("#last-input")
-//     .val()
-//     .trim();
-//   birth = $("#birth-input").val();
-//   console.log("extracted names");
-//   $.post("/api/newPatient", {
-//     // stores input information in database
-//     FirstName: first,
-//     LastName: last,
-//     birth: birth
-//   }).then(function(result) {
-//     console.log(result);
-//     clearInputForm();
-//     //   appends static data for new oatient to page
-
-//     $("#staticData").append(
-//       "First Name: " +
-//         result.FirstName +
-//         "<br>Last Name: " +
-//         result.LastName +
-//         "<br> DOB: " +
-//         result.birth
-//     );
-//     $("#staticData").show();
-//   });
-// });

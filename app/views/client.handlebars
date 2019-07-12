@@ -2,7 +2,7 @@
 
     <ul>
     {{#each patients}}
-    <li>{{FirstName}}</li>
+    <li>{{this.FirstName}}</li>
     {{/each}}
     </ul>
 
@@ -32,17 +32,13 @@
                     </ul>
                 </div>
             </nav>
-
         </div>
     </div>
     <br><br>
-    <div class="row ">
+    <div class="row .search">
         <div class="col-md-12">
             <h2>Progress Bar</h2>
-
-
             <br><br>
-
             <div class="row">
                 <div class="col-md-12" id="staticData">
                 </div>
@@ -85,3 +81,7 @@
 <footer> footer </footer>
 <!--  -->
 </div>
+
+<button class="goTesting">NEXT</button>
+<button class="goProducts">NEXT</button>
+<button class="goAntibodies">NEXT</button>
