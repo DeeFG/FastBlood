@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./css/style.css">
   <!-- <link rel="stylesheet" href="jquery.progressbar.css"> -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
   <title>FastBlood</title>
 </head>
 
@@ -18,6 +18,7 @@
 
 
   <div class="container">
+
     <!-- header -->
     <div class="row">
       <div class="col-md-12">
@@ -33,13 +34,10 @@
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#">Contact</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <a class="nav-link" href="#">Directory</a>
               </li>
             </ul>
           </div>
@@ -58,43 +56,13 @@
           </div>
         </div> -->
         <div class="progress" style="height: 100px;">
-            <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">TYSC</div>
-            <div class="progress-bar2 bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">2nd TYPE</div>
-            <div class="progress-bar3 bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar progress-bar-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">TYSC</div>
+            <div class="progress-bar2 progress-bar-warning bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">2nd TYPE</div>
+            <div class="progress-bar3 progress-bar-danger bg-info" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Products</div>
           </div>
+          
 
-<br><br>
-        <!-- <div class="row">
-            <div class="col-sm-4">
-              <div class="progress-circle p10 center-block">
-                <span>TYSC</span>
-                <div class="left-half-clipper">
-                  <div class="first50-bar"></div>
-                  <div class="value-bar"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="progress-circle p50 center-block">
-                <span>2nd Type</span>
-                <div class="left-half-clipper">
-                  <div class="first50-bar"></div>
-                  <div class="value-bar"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="progress-circle p30 center-block">
-                <span>Product</span>
-                <div class="left-half-clipper">
-                  <div class="first50-bar"></div>
-                  <div class="value-bar"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
+       <br><br>
       <div class="row">
           <div class="col-md-12" id="staticData">
         
@@ -139,19 +107,19 @@
                   <label>T&S</label>
                 </div>
                 <div class="col-md-1">
-                  <input id="TS" name="progress" class="progress" type="checkbox" value="100">
+                  <input id="TS" name="progress" class="progress" type="checkbox" value="20">
                 </div>
                 <div class="col-md-1">
                   <label>Confirmed Type</label>
                 </div>
                 <div class="col-md-1">
-                  <input id="2type" name="progress" class="progress" type="checkbox" value="60">
+                  <input id="2type" name="progress" class="progress2" type="checkbox" value="30">
                 </div>
                 <div class="col-md-1">
                   <label>Special Testing</label>
                 </div>
                 <div class="col-md-1">
-                  <input id="speialTest"name="done" class="done" type="checkbox" value="60">
+                  <input id="speialTest"name="done" class="progress2" type="checkbox" value="50">
                 </div>
               </div>
             </div>
@@ -185,26 +153,31 @@
   <div class="col-md-12">
       
         <legend>Antibody selection</legend>
-      <select class="col-md-12 mdb-select md-form" multiple>
-        <option value="C" ><label for="C">C</label>
-        <option value="c" ><label for="c">c</label>
-        <option value="E" ><label for="E"></label>
-        <option value="e" ><label for="e">E</label>
-        <option value="D" ><label for="D">D</label>
-        <option value="M" ><label for=M">M</label>
-        <option value="N" ><label for="N">N</label>
-        <option value="S" ><label for="S">S</label>
-        <option value="s" ><label for="s">s</label>
-        <option value="K" ><label for="K">K</label>
-        <option value="k" ><label for="k">k</label>
-        <option value="Kpa" ><label for="Kpa">Kpa</label>
-        <option value="Jsa" ><label for="Jsa">Jsa</label>
-        <option value="Fya" ><label for="Fya">Fya</label>
-        <option value="Fyb" ><label for="Fyb">Fyb</label>
-        <option value="Jka" ><label for="Jka">Jka</label>
-        <option value="JKb" ><label for="Jkb">Jkb</label>
+        <p>Hold CTRL / CMD for selecting multiple fields</p>
+      <select class="col-md-2 antibodies" id="chosenOnes" multiple="multiple">
+        <option value="" disabled selected>Choose Antibodies</option>
+        <option value="C" for="C">C</option>
+        <option value="c" for="c">c</option>
+        <option value="E" for="E">E</option>
+        <option value="e" for="e">e</option>
+        <option value="D" for="D">D</option>
+        <option value="M" for=M">M</option>
+        <option value="N" for="N">N</option>
+        <option value="S" for="S">S</option>
+        <option value="s" for="s">s</option>
+        <option value="K" for="K">K</option>
+        <option value="k" for="k">k</option>
+        <option value="Kpa" for="Kpa">Kpa</option>
+        <option value="Jsa" for="Jsa">Jsa</option>
+        <option value="Fya" for="Fya">Fya</option>
+        <option value="Fyb" for="Fyb">Fyb</option>
+        <option value="Jka" for="Jka">Jka</option>
+        <option value="JKb" for="Jkb">Jkb</option>
       </select>
+      <button d="submitAntibodies" type="button" class="btn btn-primary">Add Antibodies</button>
+
   </div>
+
 </div>
 
     </div>
@@ -228,48 +201,6 @@
 
   <script>
 
-
-//     function addTime() {
-//       var dt = new Date();
-//       dt.setHours(dt.getHours() + 2);
-//       document.write(dt);
-//     };
-
-//     $(function updateProgressBar() {
-//       $('input').on('click', function () {
-//         $('input:checked').each(function () {
-//           $(this).attr('for').val().trim(); {
-//             startingValue = $(this).attr('value');
-//           }
-//         });
-//         $('.progress-bar').css('width', startingValue + '%').attr('aria-valuenow', startingValue);
-//         $('.progress-bar2').css('width', startingValue + '%').attr('aria-valuenow', startingValue);
-//         $('.progress-bar3').css('width', startingValue + '%').attr('aria-valuenow', startingValue);
-//       });
-
-//     });
-
-//     $("#submit").on("click", function (event) {
-//     event.preventDefault();
-
-//     first = $("#first-input").val().trim();
-//     last = $("#last-input").val().trim();
-//     hrn = $("#hrn-input").val().trim();
-//     birth = $("#birth-input").val();
-//     console.log("hello");
-//     $.post("/api/newPatient", {
-
-//         FirstName: first,
-//         LastName: last,
-//         HRN: hrn,
-//         birth: birth,
-
-//     }).then(function (result) {
-//         console.log(result);
-//     //    $("displayPtData").append("<h2> + results + </h2>")
-        
-//     })
-// });
 
 
   </script>

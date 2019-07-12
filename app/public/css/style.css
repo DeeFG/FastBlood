@@ -7,6 +7,10 @@
     height: 100px;
   }
 
+  .progress{
+    height:20px;
+  }
+
   #staticData{
     font-size: 20px;
 
@@ -219,3 +223,4 @@
 .progress-circle.p100 .value-bar { transform: rotate(360deg); }
 Contact GitHub API Training Shop Blog About
 © 2017 GitHub, Inc. Terms Privacy Security Status Help
+
