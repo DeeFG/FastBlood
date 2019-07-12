@@ -58,20 +58,20 @@ $("#submitPatient").on("click", function() {
       $(".progress-bar2")
         .css("width", "30%")
         .attr("aria-valuenow", 0);
-
-     
-
     } else {
       console.log("No Anitbodies");
-
-
-
-
-      $("#staticData").append("First Name: " + data.FirstName + "<br>Last Name: " + data.LastName +"<br> DOB: " +
-      data.birth + "<br> Antibodies: " + data.antibodies +" Testing needs to be completed and will take up to 1 hour");
-
-
-
+      $("#staticData").show();
+      $("#staticData").append(
+        "First Name: " +
+          data.FirstName +
+          "<br>Last Name: " +
+          data.LastName +
+          "<br> DOB: " +
+          data.birth +
+          "<br> Antibodies: " +
+          data.antibodies +
+          " Testing needs to be completed and will take up to 1 hour"
+      );
 
       $(".progress-bar")
         .css("width", "0%")
@@ -82,24 +82,18 @@ $("#submitPatient").on("click", function() {
       $(".progress-bar3")
         .css("width", "50%")
         .attr("aria-valuenow", 0);
-    }  
+    }
   });
 });
 
-
-
 // extracts antibodies selected
-
 $("button").click(function() {
-    var selectedAntibodies = [];
-    $.each($(".antibodies option:selected"), function () {
-        selectedAntibodies.push($(this).val());
-    });
-    console.log("Patient has Antibodies " + selectedAntibodies.join(", "));
+  var selectedAntibodies = [];
+  $.each($(".antibodies option:selected"), function() {
+    selectedAntibodies.push($(this).val());
+  });
+  console.log("Patient has Antibodies " + selectedAntibodies.join(", "));
 });
-
-
-
 
 // clears form
 function clearInputForm() {

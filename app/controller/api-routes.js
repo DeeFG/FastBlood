@@ -69,7 +69,6 @@ module.exports = function (app) {
 
   // // PUT route for updating patientDatas. We can get the updated patientData data from req.body
   app.put("/api/updatePTData", function (req, res) {
-
     db.PTData.update({
       Antibodies: req.body.antibodies,
     }, {
