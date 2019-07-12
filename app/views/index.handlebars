@@ -68,9 +68,9 @@
                   <input id="birth-input" type="date" class="form-control" placeholder="Apartment, studio, or floor">
                 </div>
               </div>
-              <div class="form-group col-md-12">
+              {{!-- <div class="form-group col-md-12">
                 <button id="submit" type="submit" class="btn btn-primary">Add Patient</button>
-              </div>
+              </div> --}}
             </form>
           </div>
 
@@ -85,19 +85,19 @@
                   <label>T&S</label>
                 </div>
                 <div class="col-md-1">
-                  <input id="TS" name="progress" class="progress" type="checkbox" value="20">
+                  <input id="TS" name="progress"  class="progress" type="checkbox" value="20">
                 </div>
                 <div class="col-md-1">
                   <label>Confirmed Type</label>
                 </div>
                 <div class="col-md-1">
-                  <input id="2type" name="progress" class="progress2" type="checkbox" value="30">
+                  <input id="secondType" name="progress" class="progress2" type="checkbox" value="30">
                 </div>
                 <div class="col-md-1">
                   <label>Special Testing</label>
                 </div>
                 <div class="col-md-1">
-                  <input id="speialTest"name="done" class="progress2" type="checkbox" value="50">
+                  <input id="spTest"name="done" class="progress2" type="checkbox" value="50">
                 </div>
               </div>
             </div>
@@ -109,7 +109,7 @@
                 <div class="row test">
                   <div class="col-md-4">
                     <label> Choose Products<div class="col-md-4">
-                        <select>
+                        <select id="product">
                           <option value="Red Cells">Red Cells</option>
                           <option value="Plasma">Plasma</option>
                           <option value="Platlets">Platlets</option>
@@ -118,7 +118,7 @@
                   </div>
                 </div>
                 <div class="col-md-4">
-                  <label> Number of Units <input type="number" value="" max="10"></label>
+                  <label> Number of Units <input type="number" id="productQuantity" value="" min="1" max="10"></label>
                 </div>
               </div>
             </div>
@@ -139,7 +139,7 @@
         <option value="E" for="E">E</option>
         <option value="e" for="e">e</option>
         <option value="D" for="D">D</option>
-        <option value="M" for=M">M</option>
+        <option value="M" for="M">M</option>
         <option value="N" for="N">N</option>
         <option value="S" for="S">S</option>
         <option value="s" for="s">s</option>

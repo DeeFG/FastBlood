@@ -3,7 +3,14 @@ module.exports = function(sequelize, DataTypes) {
       FirstName: DataTypes.STRING,
       LastName: DataTypes.STRING,
       birth:DataTypes.DATE,
-      Antibodies: DataTypes.STRING
+      Antibodies: DataTypes.STRING,
+      TypeAndScreen: DataTypes.BOOLEAN,
+
+
+      
+      Product: DataTypes.STRING,
+      ProductQuantity: DataTypes.INTEGER
+      
     });
     return patientData;
   };

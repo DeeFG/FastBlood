@@ -8,25 +8,55 @@
 
 $("#staticData").hide();
 
-//  extracts data from input fields
-$("#submit").on("click", function(event) {
-  event.preventDefault();
 
-  first = $("#first-input")
-    .val()
-    .trim();
-  last = $("#last-input")
-    .val()
-    .trim();
+$("button").click(function() {
+  savePatient();
+    console.log(" save pt ran");
+
+  });
+
+  // savePatient().then(function() {
+  //   console.log(" save pt ran");
+
+  // });
+// });
+
+
+ function savePatient() {
+
+  first = $("#first-input").val().trim();
+  last = $("#last-input").val().trim();
   birth = $("#birth-input").val();
   console.log("extracted names");
-  $.post("/api/newPatient", {
+
+ var testingChoice = getTestingChoice();
+  console.log("Getting Testing Choice");
+
+  var productQuantity = $("#productQuantity").val();
+  
+  console.log("Product Quantity");
+ 
+  console.log("Getting Product");
+  var productSelection = $("#product").val();
+
+  console.log("Getting Antibodies");
+  var selectedAntibodies = getAntibodies();
+  
+  return $.post("/api/newPatient", {
     // stores input information in database
     FirstName: first,
     LastName: last,
-    birth: birth
+    birth: birth,
+    Antibodies: selectedAntibodies,
+    TypeAndScreen: testingChoice,
+    // Product: productSelection,
+    //  ProductQuantity: productQuantity,
+    Product: productSelection ,
+     ProductQuantity: productQuantity,
+
   }).then(function(result) {
     console.log(result);
+    
     clearInputForm();
     //   appends static data for new oatient to page
 
@@ -40,10 +70,39 @@ $("#submit").on("click", function(event) {
     );
     $("#staticData").show();
   });
-});
+}
 
 // add antibody to specific patient
-function updateAntibodies() {}
+
+// extracts antibodies selected
+
+
+function getTestingChoice() {
+  var testingChoice = 
+  // {
+    // TS: 
+    document.getElementById("TS").checked;
+    // secondType: document.getElementById("secondType").checked,
+    // spTest: document.getElementById("spTest").checked
+  // };
+  return testingChoice;
+}
+
+
+
+function getAntibodies() {
+  var selectedAntibodies = [];
+  $.each($(".antibodies option:selected"), function() {
+    selectedAntibodies.push($(this).val());
+  });
+  return selectedAntibodies.join(", ");
+  // console.log("Patient has Antibodies " + selectedAntibodies.join(", "));
+}
+
+
+
+
+
 
 $("#submitPatient").on("click", function() {
   var id = $("#id-input").val();
@@ -86,15 +145,6 @@ $("#submitPatient").on("click", function() {
   });
 });
 
-// extracts antibodies selected
-$("button").click(function() {
-  var selectedAntibodies = [];
-  $.each($(".antibodies option:selected"), function() {
-    selectedAntibodies.push($(this).val());
-  });
-  console.log("Patient has Antibodies " + selectedAntibodies.join(", "));
-});
-
 // clears form
 function clearInputForm() {
   $('input[type="text"], textarea').val("");
@@ -104,3 +154,38 @@ function clearInputForm() {
   // $("input").prop('disabled', true);
   $(".inputBox").hide();
 }
+
+
+//  extracts data from input fields
+// $("#submit").on("click", function(event) {
+//   event.preventDefault();
+
+//   first = $("#first-input")
+//     .val()
+//     .trim();
+//   last = $("#last-input")
+//     .val()
+//     .trim();
+//   birth = $("#birth-input").val();
+//   console.log("extracted names");
+//   $.post("/api/newPatient", {
+//     // stores input information in database
+//     FirstName: first,
+//     LastName: last,
+//     birth: birth
+//   }).then(function(result) {
+//     console.log(result);
+//     clearInputForm();
+//     //   appends static data for new oatient to page
+
+//     $("#staticData").append(
+//       "First Name: " +
+//         result.FirstName +
+//         "<br>Last Name: " +
+//         result.LastName +
+//         "<br> DOB: " +
+//         result.birth
+//     );
+//     $("#staticData").show();
+//   });
+// });
