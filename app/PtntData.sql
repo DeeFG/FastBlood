@@ -12,20 +12,8 @@ CREATE TABLE patientRecords
    
 );
 
-INSERT INTO patientRecords(FirstName,LastName,birth,Antibodies)
-VALUES ("kristen", "Bell", 19800520, "K");
 
-INSERT INTO patientRecords(FirstName,LastName,birth,Antibodies)
-VALUES ("Zoe","Kravitz", 19881201,"c, E");
 
--- INSERT INTO patientRecords(FirstName,LastName,birth,Antibodies)
--- VALUES ("Lisa","Lopes", 1988614,"S, Jka");
-
--- INSERT INTO patientRecords(FirstName,LastName,birth,Antibodies)
--- VALUES ("Ginger","Nim", 19400711);
-
--- INSERT INTO patientRecords(FirstName,LastName,birth,Antibodies)
--- VALUES ("Steve","Jobs", 19550224);
 
 
 CREATE TABLE antigenFrequency(
