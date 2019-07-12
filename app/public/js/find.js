@@ -1,3 +1,49 @@
+
+$("#submitPatient").on("click", function() {
+    var id = $("#id-input").val();
+    console.log(id);
+    
+    $.get("/api/" + id).then(function(data) {
+      console.log(data);
+      if (data.Antibodies) {
+        console.log("Has Antibodies and may take up to 1 hour ");
+        $(".progress-bar")
+          .css("width", "20%")
+          .attr("aria-valuenow", 0);
+        $(".progress-bar2")
+          .css("width", "30%")
+          .attr("aria-valuenow", 0);
+      } else {
+        console.log("No Anitbodies");
+        $("#staticData").show();
+  
+        $("#staticData").append(
+          "First Name: " +
+            data.FirstName +
+            "<br>Last Name: " +
+            data.LastName +
+            "<br> DOB: " +
+            data.birth +
+            "<br> Antibodies: " +
+            data.antibodies +
+            " Testing needs to be completed and will take up to 1 hour"
+        );
+  
+        $(".progress-bar")
+          .css("width", "0%")
+          .attr("aria-valuenow", 0);
+        $(".progress-bar2")
+          .css("width", "0%")
+          .attr("aria-valuenow", 0);
+        $(".progress-bar3")
+          .css("width", "50%")
+          .attr("aria-valuenow", 0);
+      }
+    });
+  });
+
+
+
 // $("#submit1").on("click", function (event) {
 //     event.preventDefault();
 

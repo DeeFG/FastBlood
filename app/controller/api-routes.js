@@ -34,6 +34,7 @@ module.exports = function(app) {
       res.render("client", { patients: results });
     });
   });
+  
   app.get("/index", function(req, res) {
     db.PTData.findAll().then(function(results) {
       console.log(results);
@@ -52,9 +53,10 @@ module.exports = function(app) {
         return res.json(result);
       });
     } else {
-      db.findAll().then(function(result) {
-        res.json(result);
-      });
+      // db.findAll().then(function(result) {
+      //   res.json(result);
+      // });
+      alert ("patient not found");
     }
   });
 

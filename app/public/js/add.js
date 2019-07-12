@@ -9,7 +9,7 @@
 $("#staticData").hide();
 
 
-$("button").click(function() {
+$("#submitAntibodies").click(function() {
   savePatient();
     console.log(" save pt ran");
 
@@ -102,11 +102,13 @@ function getAntibodies() {
 
 
 
+// -----------------------seaerch for patient on client side-------------------------------
 
 
 $("#submitPatient").on("click", function() {
   var id = $("#id-input").val();
   console.log(id);
+
   $.get("/api/" + id).then(function(data) {
     console.log(data);
     if (data.Antibodies) {
@@ -120,6 +122,7 @@ $("#submitPatient").on("click", function() {
     } else {
       console.log("No Anitbodies");
       $("#staticData").show();
+
       $("#staticData").append(
         "First Name: " +
           data.FirstName +
