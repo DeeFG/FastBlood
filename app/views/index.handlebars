@@ -1,118 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
+<div class="container">
+  <br><br>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./css/style.css">
-  <!-- <link rel="stylesheet" href="jquery.progressbar.css"> -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="app.js">
-  
-  <!------ body -->
+  <div class=" main col-md-12">
+    <div class="row">
+      <div class="col-md-12" id="staticData">
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <div class="row main inputBox">
+    <div class="col-md-12">
+      <div class="welcome">
+        <div class="main__title">Enter a New Patient</div>
+      </div>
 
-<body>
-  <div class="container">
-    <br><br>
-    <div class="row main">
-      <div class="row ">
-        <div class="col-md-12">
-          <div class="welcome">
-            <div class="main__title">Enter a New Patient</div>
-          </div>
-          <br><br>
-          <div class="row">
-            <div class="col-md-12" id="staticData">
+      <div class=" col-md-12">
+        <!-- Find patient -->
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="">First</label>
+              <input id="first-input" type="text" class="form-control" placeholder="First">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="">Last</label>
+              <input id="last-input" type="text" class="form-control" placeholder="Last">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="">Birth Date</label>
+              <input id="birth-input" type="date" class="form-control" placeholder="date">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="">Gender</label>
+              <input id="gender-input" type="text" class="form-control" placeholder="M , F ,U">
+            </div>
+            <div class="form-group col-md-3">
+
+              {{!-- <div id="gender1">
+      <h5><b>Male or Female?</b>:
+                    <input type="radio" id="" class="gender" value="Male"> Male
+                    <input type="radio" id="r2" class="gender" value="Female"> Female
+                </h5>
+    </div> --}}
+              {{!-- <label for="">Gender</label>
+              <label><input type="radio" name="gender" value="male">Male</label>
+              <label><input type="radio" name="gender" value="female">Female</label> --}}
             </div>
           </div>
-          <div class="inputBox col-md-12">
-            <!-- Find patient -->
-            <form>
-              <div class="form-row">
-                <div class="form-group col-md-3">
-                  <label for="">First</label>
-                  <input id="first-input" type="text" class="form-control" placeholder="First">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="">Last</label>
-                  <input id="last-input" type="text" class="form-control" placeholder="Last">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="">Birth Date</label>
-                  <input id="birth-input" type="date" class="form-control" placeholder="Apartment, studio, or floor">
-                </div>
-              </div>
-            </form>
-            <!-- <button class="">NEXT</button> -->
-            <div class="buttonHolder">
-              <a href="#" class="goTesting button tick"></a>
-            </div>
-          </div>
+        </form>
+        <!-- <button class="">NEXT</button> -->
+        <div class="buttonHolder">
+          <a class="goTesting button tick"></a>
         </div>
       </div>
     </div>
-
-    <!-- TESTING -->
   </div>
+
+  <!-- TESTING -->
+
   <br><br>
 
   <div class="row main Testing">
-    <div class="main__title">Order Testing</div>
     <div class="col-md-12">
-      <div>
-        <input id="TS" name="progress" class="progress2" type="checkbox" value="20"><br>
-        <label>Type and Screen</label>
+      <div class="welcome">
+        <div class="main__title">Completed Testing</div>
+      </div>
+      <br><br>
+      <div class="col-md-12">
+        <div>
+          <input id="TS" name="progress" class="progress2" type="checkbox" value="20"><br>
+          <label>Type and Screen</label>
 
-        <input id="secondType" name="progress" class="progress2" type="checkbox" value="30"><br>
-        <label>Confirmed Type</label>
+          <input id="secondType" name="progress" class="progress2" type="checkbox" value="30"><br>
+          <label>Confirmed Type</label>
 
-        <input id="spTest" name="done" class="progress2" type="checkbox" value="50"><br>
-        <label>Special Testing</label>
-        <!-- <button class="">NEXT</button> -->
-        <div class="buttonHolder">
-          <a href="#" class="goProducts button tick"></a>
+          <input id="spTest" name="done" class="progress2" type="checkbox" value="50"><br>
+          <label>Special Testing</label>
+          <!-- <button class="">NEXT</button> -->
+          <div class="buttonHolder">
+            <a href="#" class="goProducts button tick"></a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
   <!-- CHOOSE PRODUCT and number choice -->
   <br><br>
-  <div class="row test main Products">
-    <div class="col-md-12">
-      <div class="main__title">Order Product</div>
-      <div class="row test">
-        <div class="col-md-6">
-          <label> Choose Products <br>
-            <div class="col-md-4"><br>
-              <select id="product">
-                <option value="" disabled selected>Choose Products</option>
-                <option value="Red Cells">Red Cells</option>
-                <option value="Plasma">Plasma</option>
-                <option value="Platlets">Platlets</option>
-                <option value="Cryo">Cryo</option>
-              </select>
-          </label>
-        </div>
-      </div>
+
+
+
+
+  <div class="row  main Products">
+  <div class="col-md-12">
+    <div class="main__title">Order Product</div>
+    <div class="row test">
       <div class="col-md-6">
-        <label> Number of Units <br><br> <input type="number" id="productQuantity" value="0" min="1" max="10"></label>
+        <label> Choose Products <br>
+          <div class="col-md-4"><br>
+            <select id="product">
+              <option value="" disabled selected>Choose Products</option>
+              <option value="Red Cells">Red Cells</option>
+              <option value="Plasma">Plasma</option>
+              <option value="Platlets">Platlets</option>
+              <option value="Cryo">Cryo</option>
+            </select>
+        </label>
       </div>
     </div>
-    <!-- <button class="">NEXT</button> -->
-    <div class="buttonHolder">
-      <a href="#" class="goAntibodies button tick"></a>
+    <div class="col-md-6">
+      <label> Number of Units <br><br> <input type="number" id="productQuantity" value="0" min="1" max="10"></label>
     </div>
   </div>
-
+  <!-- <button class="">NEXT</button> -->
+  <div class="buttonHolder">
+    <a href="#" class="goAntibodies button tick"></a>
   </div>
-  </div>
-  </div>
+</div>
+</div>
   <!-- select Ab  -->
-
+ 
   <br><br>
   <div class="row Antibodies main">
     <div class="col-md-12">
@@ -140,67 +146,10 @@
       </select>
       <!-- <button class="button tick"></button> -->
       <div class="buttonHolder">
-        <a href="#" id="submitAntibodies" class="button tick"></a>
+         <a href="#" id="submitAntibodies" class="button tick"></a>
       </div>
     </div>
   </div>
-
-  <!-- footer -->
-  <footer class="footer mt-auto py-3">
-    <div class="container">
-      <span class="text-muted">Fast Blood DeeFG &copy;</span>
-    </div>
-  </footer>
-
   </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</body>
-
-</html>
-
-<!-- <div class="main">
-      <div class="main__title">Checkboxes</div>
-      <div class="main__content">
-        <label class="switcher">
-          <input type="checkbox" />
-          <div class="switcher__indicator"></div><span>Normal</span>
-        </label><br /><br />
-        <label class="switcher">
-          <input type="checkbox" checked="checked" />
-          <div class="switcher__indicator"></div><span>Checked</span>
-        </label><br /><br /> -->
-<!-- <label class="switcher">
-            <input type="checkbox" disabled="disabled"/>
-            <div class="switcher__indicator"></div><span>Disabled</span>
-          </label><br/><br/>
-          <label class="switcher">
-            <input type="checkbox" disabled="disabled" checked="checked"/>
-            <div class="switcher__indicator"></div><span>Disabled</span>
-          </label> -->
-<!-- </div> -->
-
-<!-- Testing CSS3 properties
-        Reference : http://dribbble.com/shots/712038-Button -->
-<!-- <div class="buttonHolder">
-            <a href="#" class="button tick"></a>
-        </div> -->
-
-<!-- BRAND BUTTONS -->
-<!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-    
-    <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'> -->
-
-<!-- 
-    <h1>BRAND BUTTONS</h1>
-    
-    <div class="copyright">
-      <p>Forked of <a href="http://www.fwpolice.com">The Fireworks Police</a> <br>
-    Recreated by Ese Coal &amp; Dammyammy
-      </p><br> <p><a href="http://techcompanionng.com">TECH COMPANION NIGERIA</a> <br>dammy at techcompanionng dot com<br>
-      ese underscore gift2001 at yahoo dot com</p>
-      <p>Brand Logos By: <a href="http://fortawesome.github.io/Font-Awesome">Font Awesome</a> &amp Brand Colors by: <a href="http://brandcolors.net/">Brand Colors</a> </p>
-    
-      <h3 class="text-center">Extend &amp; Enjoy</h3>
-    </div> -->
+  <br><br>

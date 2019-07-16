@@ -4,6 +4,9 @@ var db = require("../models");
 // Routes
 // =============================================================
 
+
+
+
 module.exports = function(app) {
   // dcreates a new patient
   app.post("/api/newPatient", function(req, res) {
@@ -14,6 +17,7 @@ module.exports = function(app) {
       birth: req.body.birth,
       Antibodies: req.body.Antibodies,
       TypeAndScreen: req.body.TypeAndScreen,
+      Gender:req.body.gender,
       Product: req.body.Product ,
       ProductQuantity: req.body.ProductQuantity,
 
@@ -34,6 +38,9 @@ module.exports = function(app) {
       res.render("client", { patients: results });
     });
   });
+
+
+  // new routes
   
   app.get("/index", function(req, res) {
     db.PTData.findAll().then(function(results) {
@@ -41,6 +48,22 @@ module.exports = function(app) {
       res.render("index", { patients: results });
     });
   });
+
+  app.get("/addPT", function(req, res) {
+    db.PTData.findAll().then(function(results) {
+      console.log(results);
+      res.render("addPT", { patients: results });
+    });
+  });
+
+  // app.get("/index", function(req, res) {
+  //   db.PTData.findAll().then(function(results) {
+  //     console.log(results);
+  //     res.render("index", { patients: results });
+  //   });
+  // });
+
+
 
   // find one pateint if fail find them all
   app.get("/api/:id", function(req, res) {
@@ -63,10 +86,46 @@ module.exports = function(app) {
   //update the patient record
 
   // // PUT route for updating patientDatas. We can get the updated patientData data from req.body
+  
+  
+  app.get("/patientData", function (req, res) {
+      res.render("updatePT")
+  });
+
+  app.post("/patientData", function (req, res) {
+    console.log(req.body)
+    db.PTData.findOne({
+      where: {
+        id: req.body.patientId
+      }
+    }).then(function (result) {
+      // res.json(result);
+
+       res.render("updatePT", { patient: result})
+    });
+  });
+  app.get("/patientData/:id", function (req, res) {
+    db.PTData.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (result) {
+      res.json(result);
+
+      // res.render("updatePT", { patient: result})
+    });
+  });
+
+  
+  
   app.put("/api/updatePTData", function(req, res) {
     db.PTData.update(
       {
-        Antibodies: req.body.antibodies
+      Antibodies: req.body.antibodies,
+      TypeAndScreen: req.body.TypeAndScreen,
+      Product: req.body.Product ,
+      // Gender:req.body.gender,
+      ProductQuantity: req.body.ProductQuantity,
       },
       {
         where: {
@@ -84,27 +143,16 @@ module.exports = function(app) {
       });
   });
 
-  // app.get("/api/patientData/:id", function (req, res) {
-  //   db.PTData.findOne({
-  //     where: {
-  //       id: req.params.id
-  //     }
-  //   }).then(function (result) {
-  //     res.json(result);
-  //   });
-  // });
 
-  // // DELETE route for deleting patientDatas. We can get the id of the patientData to be deleted from
-  // // req.params.id
-  // app.delete("/api/patientDatas/:id", function (req, res) {
-  //   // We just have to specify which patientData we want to destroy with "where"
-  //   db.patientData.destroy({
-  //     where: {
-  //       id: req.params.id
-  //     }
-  //   }).then(function (results) {
-  //     res.json(results);
-  //   });
 
-  // });
+
+
+
+  
 };
+
+
+// do the get 
+// when done modifying 
+// fill form 
+// sumbmit - put

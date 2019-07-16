@@ -1,57 +1,60 @@
 <div class="container">
 
-    
+
     {{!-- {{#each patients}} --}}
     {{!-- <li>{{this.FirstName}}</li> --}}
     {{!-- {{/each}} --}}
-    
+
 
     <!-- header -->
 
     <br><br>
     <div class="row .search">
         <div class="col-md-12">
-            <h2>Progress Bar</h2>
             <br><br>
             <div class="row">
                 <div class="col-md-12" id="staticData">
                 </div>
             </div>
             <div class="row">
-                <div class="inputBox col-md-12">
+                <div class="inputBox  main col-md-12">
                     <!-- Find patient -->
                     <div class="form-row">
                         <div class="form-group col-md-3 patientInfo">
-                            <label for="">Enter the patient ID</label>
+                            <label class="main__title">Enter the patient ID</label>
                             <input id="id-input" type="text" class="form-control" placeholder="Hospital ID number">
                         </div>
                         <div class="form-group col-md-12">
                             <button id="submitPatient" class="btn btn-primary">Search Patient</button>
+                            <button id="searchNewPatient" class="btn btn-primary">Check a different Patient</button>
                         </div>
                     </div>
 
+                    <div class="main__title">Testing & Order Status</div>
                     <div class="progress" style="height: 100px;">
                         <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="15"
-                            aria-valuemin="0" aria-valuemax="100">TYPE and Screen</div>
+                            aria-valuemin="0" aria-valuemax="100"></div>
                         <div class="progress-bar2 bg-success" role="progressbar" style="width: 0%" aria-valuenow="30"
-                            aria-valuemin="0" aria-valuemax="100">Type Confirm</div>
+                            aria-valuemin="0" aria-valuemax="100"></div>
                         <div class="progress-bar3 bg-info" role="progressbar" style="width: 0%" aria-valuenow="20"
-                            aria-valuemin="0" aria-valuemax="100">Finding and Testing your units</div>
+                            aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
 
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4"><a id="colorList1">▆</a> Type and Screen Complete</div>
+                        <div class="col-md-4"><a id="colorList2">▆</a> Confirmatory Testing Complete</div>
+                        <div class="col-md-4"><a id="colorList3">▆</a> Product Order Complete</div>
                     </div>
+                    <br>
+                    <br>
                 </div>
-
             </div>
-
         </div>
     </div>
-    <!--  -->
 </div>
-</div>
-<br><br>
 <!--  -->
+</div>
+</div>
 
-<footer> footer </footer>
-<!--  -->
 </div>

@@ -1,0 +1,119 @@
+{{!-- //CREAT A EDIT PATIENT PAGE WITH FORM
+
+// CRETA A API ROUTE GET DATA BY ID 
+// API ROUTE ON THE SERER FOR UPDATE
+// 
+//  --}}
+
+
+{{!-- find pt --}}
+
+<div class="container">
+
+<form action="/patientData" method="POST">
+<div class="form-row">
+  <div class="form-group col-md-3 patientInfo">
+    <label class="main__title">Enter the patient ID</label>
+    <input name="patientId" id="id-input" type="text" class="form-control" placeholder="Hospital ID number">
+  </div>
+  <div class="form-group col-md-12">
+    {{!-- <button type="submit" id="" class="btn btn-primary">Search Patient</button> --}}
+    <button id="submitPatient" class="btn btn-primary">Search Patient</button>
+    <button id="searchNewPatient" class="btn btn-primary">Check a different Patient</button>
+  </div>
+</div>
+</form>
+
+<br><br>
+{{!-- add  new data to pt --}}
+<div class="row main Testing">
+  <div class="col-md-12">
+    <div class="welcome">
+      <div class="main__title">Completed Testing</div>
+    </div>
+    <br><br>
+    <div class="col-md-12">
+      <div>
+        <input id="TS" name="progress" class="progress2" type="checkbox" value="20"><br>
+        <label>Type and Screen</label>
+
+        <input id="secondType" name="progress" class="progress2" type="checkbox" value="30"><br>
+        <label>Confirmed Type</label>
+
+        <input id="spTest" name="done" class="progress2" type="checkbox" value="50"><br>
+        <label>Special Testing</label>
+        <!-- <button class="">NEXT</button> -->
+        <div class="buttonHolder">
+          <a href="#" class="goProducts button tick"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- CHOOSE PRODUCT and number choice -->
+<br><br>
+
+
+
+<div class="row  main Products">
+  <div class="col-md-12">
+    <div class="main__title">Order Product</div>
+    <div class="row test">
+      <div class="col-md-6">
+        <label> Choose Products <br>
+          <div class="col-md-4"><br>
+            <select id="product">
+              <option value="" disabled selected>Choose Products</option>
+              <option value="Red Cells">Red Cells</option>
+              <option value="Plasma">Plasma</option>
+              <option value="Platlets">Platlets</option>
+              <option value="Cryo">Cryo</option>
+            </select>
+        </label>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label> Number of Units <br><br> <input type="number" id="productQuantity" value="0" min="1" max="10"></label>
+    </div>
+  </div>
+  <!-- <button class="">NEXT</button> -->
+  <div class="buttonHolder">
+    <a href="#" class="goAntibodies button tick"></a>
+  </div>
+</div>
+
+<!-- select Ab  -->
+
+<br><br>
+<div class="row Antibodies main">
+  <div class="col-md-12">
+    <div class="main__title">Antibody selection</div>
+    <p>Hold CTRL / CMD for selecting multiple fields</p>
+    <select class="col-md-9 antibodies" id="chosenOnes" multiple="multiple">
+      <option value="" disabled selected>Choose Antibodies</option>
+      <option value="C" for="C">C</option>
+      <option value="c" for="c">c</option>
+      <option value="E" for="E">E</option>
+      <option value="e" for="e">e</option>
+      <option value="D" for="D">D</option>
+      <option value="M" for="M">M</option>
+      <option value="N" for="N">N</option>
+      <option value="S" for="S">S</option>
+      <option value="s" for="s">s</option>
+      <option value="K" for="K">K</option>
+      <option value="k" for="k">k</option>
+      <option value="Kpa" for="Kpa">Kpa</option>
+      <option value="Jsa" for="Jsa">Jsa</option>
+      <option value="Fya" for="Fya">Fya</option>
+      <option value="Fyb" for="Fyb">Fyb</option>
+      <option value="Jka" for="Jka">Jka</option>
+      <option value="JKb" for="Jkb">Jkb</option>
+    </select>
+    <!-- <button class="button tick"></button> -->
+    <div class="buttonHolder">
+      !-- <button id="updatePatient" class="button tick"></button>
+    </div>
+  </div>
+</div>
+
+</div>
