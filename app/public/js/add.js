@@ -1,3 +1,6 @@
+
+
+
 // search data base for id
 
 // if antibodies present add time to progress bar
@@ -7,6 +10,7 @@
 // update again ...progess stay the same
 
 $("#staticData").hide();
+$("#searchNewPatient").hide();
 $(".Testing").hide();
 $(".Products").hide();
 $(".Antibodies").hide();
@@ -25,7 +29,7 @@ $(".goProducts").on("click", function() {
 
   $(".inputBox").hide();
   $(".Testing").hide();
-  $(".Antibodies").hide();
+  $(".Antibodies").show();
 });
 
 $(".goAntibodies").on("click", function() {
@@ -51,12 +55,21 @@ $("#submitAntibodies").click(function() {
   // });
 // });
 
+$("#updatePatient").on("click", function(){
+    console.log("Here")
+})
+
 
  function savePatient() {
 
   first = $("#first-input").val().trim();
   last = $("#last-input").val().trim();
   birth = $("#birth-input").val();
+  gender = $("#gender-input").val();
+  
+  console.log(gender);
+
+
   console.log("extracted names");
 
  var testingChoice = getTestingChoice();
@@ -69,6 +82,8 @@ $("#submitAntibodies").click(function() {
   console.log("Getting Product");
   var productSelection = $("#product").val();
 
+  // var gender = getGender();
+
   console.log("Getting Antibodies");
   var selectedAntibodies = getAntibodies();
   
@@ -79,10 +94,9 @@ $("#submitAntibodies").click(function() {
     birth: birth,
     Antibodies: selectedAntibodies,
     TypeAndScreen: testingChoice,
-    // Product: productSelection,
-    //  ProductQuantity: productQuantity,
+    Gender:gender,
     Product: productSelection ,
-     ProductQuantity: productQuantity,
+    ProductQuantity: productQuantity,
 
   }).then(function(result) {
     console.log(result);
@@ -115,6 +129,15 @@ $("#submitAntibodies").click(function() {
 
 // extracts antibodies selected
 
+// function getGender() {
+  
+//     var gender = $("input[name='gender']:checked").val();
+   
+      
+// }
+
+
+
 
 function getTestingChoice() {
   var testingChoice = 
@@ -140,28 +163,27 @@ function getAntibodies() {
 
 
 
-
 // -----------------------seaerch for patient on client side-------------------------------
 
 
 $("#submitPatient").on("click", function() {
+
+  this.disabled = true;
+
   var id = $("#id-input").val();
   console.log(id);
 
-  $.get("/api/" + id).then(function(data) {
+  $.get("/patientData/" + id).then(function(data) {
     console.log(data);
     if (data.Antibodies) {
-      console.log("Has Antibodies and may take up to 1 hour ");
-      $(".progress-bar")
-        .css("width", "20%")
-        .attr("aria-valuenow", 0);
-      $(".progress-bar2")
-        .css("width", "30%")
-        .attr("aria-valuenow", 0);
-    } else {
-      console.log("No Anitbodies");
-      $("#staticData").show();
+      
+      var currentTime = new Date();
+      currentTime.setMinutes(currentTime.getMinutes() + 60);
+      console.log(currentTime.toUTCString());
+      var newTime = currentTime.toUTCString();
 
+      $("#searchNewPatient").show();
+      $("#staticData").show();
       $("#staticData").append(
         "First Name: " +
           data.FirstName +
@@ -169,16 +191,46 @@ $("#submitPatient").on("click", function() {
           data.LastName +
           "<br> DOB: " +
           data.birth +
-          "<br> Antibodies: " +
-          data.antibodies +
-          " Testing needs to be completed and will take up to 1 hour"
+          "<br> Antibodies Present: " +
+          data.Antibodies +
+          "<br><strong>Products should be fullfilled by:</strong> " + "<h3>" + newTime +"</h3><br><br>" 
       );
 
+   console.log("Has Antibodies");
+
       $(".progress-bar")
-        .css("width", "0%")
+        .css("width", "20%")
         .attr("aria-valuenow", 0);
       $(".progress-bar2")
-        .css("width", "0%")
+        .css("width", "30%")
+        .attr("aria-valuenow", 0);
+
+
+        
+
+
+    } else {
+      console.log("No Anitbodies");
+      $("#searchNewPatient").show();
+      $("#staticData").show();
+      $("#staticData").append(
+        "First Name: " +
+          data.FirstName +
+          "<br>Last Name: " +
+          data.LastName +
+          "<br> DOB: " +
+          data.birth +
+          "<br> Antibodies Present:  No antibodies present" +
+          data.Antibodies +
+          "<h4>Your products are now Available</h4><br><br>" 
+      );
+
+
+      $(".progress-bar")
+        .css("width", "20%")
+        .attr("aria-valuenow", 0);
+      $(".progress-bar2")
+        .css("width", "30%")
         .attr("aria-valuenow", 0);
       $(".progress-bar3")
         .css("width", "50%")
@@ -186,6 +238,13 @@ $("#submitPatient").on("click", function() {
     }
   });
 });
+
+
+
+$("#searchNewPatient").click(function(){
+  location.reload(true);
+});
+
 
 // clears form
 function clearInputForm() {
@@ -196,6 +255,9 @@ function clearInputForm() {
   // $("input").prop('disabled', true);
   $(".inputBox").hide();
 }
+
+
+
 
 
 
