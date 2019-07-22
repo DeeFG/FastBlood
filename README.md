@@ -12,7 +12,7 @@
 
 
 ## Technology Used: :computer:
-### * HTML
+* HTML
 * CSS 
 * Javascript 
 * JQuery 
