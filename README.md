@@ -2,7 +2,7 @@
 ## Client-side tracking mechanism for rare or type specific blood products
 
 https://myapp-fastblood.herokuapp.com/
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Image]()
 
 ## Problem :question:
 #### At times medical staff have limited understanding of the difficulties in finding rare units of blood, particularly in clinically urgent situations. This app is to help the understanding and communication between blood providers, transfusion laboratories, clinicians, and patients.
