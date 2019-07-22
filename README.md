@@ -1,11 +1,8 @@
 # Fast Blood  :hospital:
 ## Client-side tracking mechanism for rare or type specific blood products
-https://myapp-fastblood.herokuapp.co
 
+[Fast Blood deployed on heruoku](https://myapp-fastblood.herokuapp.com/)
 
-![# Fast Blood](https://github.com/DeeFG/Portfolio/blob/master/Assetts/images/FASTBLOOD.png?raw=)
-
-m/
 ## Problem :question:
 #### At times medical staff have limited understanding of the difficulties in finding rare units of blood, particularly in clinically urgent situations. This app is to help the understanding and communication between blood providers, transfusion laboratories, clinicians, and patients.
 
@@ -19,6 +16,7 @@ m/
 ## Technology Used: :computer:
 * HTML
 * CSS 
+* Heroku
 * Javascript 
 * JQuery 
 * Node 
