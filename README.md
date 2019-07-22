@@ -22,4 +22,6 @@
 * JQuery 
 * Node 
 * mySQL 
-* Boostrap
+* Bootstrap
+* NPM packages
+  * Express, express-handlebars,Sequelize
