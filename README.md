@@ -12,4 +12,5 @@
 
 
 ## Technology Used: :computer:
-*HTML *CSS *Javascript *JQuery *Node *mySQL *Boostrap
+### * HTML
+*CSS *Javascript *JQuery *Node *mySQL *Boostrap
